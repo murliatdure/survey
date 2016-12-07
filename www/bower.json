@@ -18,6 +18,8 @@
   "dependencies": {
     "jquery": "^3.1.1",
     "alpaca": "^1.5.22",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "jStorage": "jstorage#^0.4.12",
+    "Template7": "template7#^1.1.3"
   }
 }
