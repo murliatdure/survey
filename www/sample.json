@@ -1,0 +1,14 @@
+{
+    "HIV" : {
+        "serviceBOs" : ["Discrimination", "Stock Out"] 
+    },
+    "TB" : {
+        "serviceBOs" : ["Stock Out"] 
+    },
+    "SMARTCITY" : {
+        "serviceBOs" : ["Light Issues", "Water Sanitation"] 
+    },
+    "DISASTER" : {
+        "serviceBOs" : ["Report a Disaster", "Report Impact"] 
+    }
+}
