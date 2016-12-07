@@ -1,0 +1,7 @@
+www/bower_components/
+platforms/
+plugins/
+release/
+hooks/
+~*
+*.orig
