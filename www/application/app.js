@@ -23,7 +23,28 @@ app.getFormData = function($form){
 	return indexed_array;
 }
 
+app.preSaveSurvey = function(callback) {
+    
+    var lat = "0.00000";
+    var lng = "0.00000";
+    
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(positions){
+            
+            app.currentPosition = positions;
+            console.log(app.currentPosition);
+            app.saveSurvey(callback);
+            
+        });
+    } else { 
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+
 app.saveSurvey = function(callback) {
+    
+    
+    
     
     var communityBO = $.jStorage.get("communityBO");
     
@@ -57,8 +78,8 @@ app.saveSurvey = function(callback) {
 	caseSet.communityPreferencesByServiceType = communityPreferencesByServiceType;
 	//caseSet.callBackYn = $("#reqCallbackFlag:checked").length > 0 ? 'Y' : 'N';
 	//caseSet.callBackNo = $("#callBackNo").val();
-	caseSet.latitude = "18.5204";//uc.currentPosition ? uc.currentPosition.coords.latitude : null;
-	caseSet.longitude = "73.8567";//uc.currentPosition ? uc.currentPosition.coords.longitude : null;
+	caseSet.latitude = app.currentPosition ? app.currentPosition.coords.latitude : null;
+	caseSet.longitude = app.currentPosition ? app.currentPosition.coords.longitude : null;
 	caseSet.activeYN = 'Y';
 	caseSet.deleteYN = 'N';
 	caseSet.status = 9;

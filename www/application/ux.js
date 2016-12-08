@@ -41,7 +41,7 @@ ux.communityProfileSuccess = function(r) {
         
         $(".trigger-submit").on("click", function() {
             console.log("11");
-            app.saveSurvey('ux.surveySuccessCallback');
+            app.preSaveSurvey('ux.surveySuccessCallback');
         })
     });
     
@@ -50,5 +50,11 @@ ux.communityProfileSuccess = function(r) {
 
 ux.surveySuccessCallback = function(r) {
     console.log(r);
-    console.log("Thanks for your input!");
+    
+    $('.alert-success').removeClass('hide');
+    
+    $(".alert-success").fadeTo(1000, 500).slideUp(500, function(){
+        //$(".alert-success").alert('close');
+        $('.alert-success').addClass('hide');
+    });
 }
