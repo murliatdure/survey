@@ -12,3 +12,24 @@ apiservices.loadCommunityProfile = function(communityBO, callback) {
     };
     $.ajax(request);
 }
+
+apiservices.createCase = function(caseBO, callback) {
+    var request = {
+        url: apiservices.api + 'cases/save.json?callback=' + callback,
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(caseBO),
+        error:function(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR.status);
+            if(jqXHR.status == 0) {
+                //create case offline
+                console.log(caseBO.caseSet.type);
+                //ux.createOfflineRequest(caseBO.caseSet.type,caseBO);
+            }
+        },
+        fail:function(jqXHR, textStatus, errorThrown) {
+            console.log("error");
+        }
+    };
+    $.ajax(request);
+}

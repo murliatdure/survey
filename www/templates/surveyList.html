@@ -1,5 +1,7 @@
 <ol class="list-unstyled">
     {{#each this}}
-        <li><a href="#">{{communityPreferences.name}} {{communityPreferences.id}}</a></li>
+        <li class="trigger-open-survey" data-id="{{communityPreferences.id}}">
+            <a href="#">{{communityPreferences.name}}</a>
+        </li>
     {{/each}}
 </ol>
