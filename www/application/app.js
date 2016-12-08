@@ -51,7 +51,7 @@ app.saveSurvey = function(callback) {
 
 	var caseBO = {};
 	var caseSet = {};
-	caseSet.applicant = applicantBO;
+	caseSet.applicant = applicantBO.applicant;
 	caseSet.community = communityBO.community;
 	caseSet.communityPreferencesByCaseType = communityPreferencesByCaseType;
 	caseSet.communityPreferencesByServiceType = communityPreferencesByServiceType;
